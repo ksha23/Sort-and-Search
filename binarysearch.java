@@ -17,7 +17,6 @@ public class PA33 {
 		int middle;
 		while (left<=right) {
 			middle = (left+right)/2;
-			System.out.println("Looking at index: " + middle + ", element: " + arr[middle]);
 			if (findMe>arr[middle]) {
 				left = middle+1;
 			}
@@ -30,10 +29,7 @@ public class PA33 {
 		}
 		return -1;
 	}
-
-	/**
-	 * Main Method: Do not change.
-	 */
+	
 	public static void main(String[] args) {
 		// 0 1 2 3 4 5
 		int[] arrEven = { 2, 4, 6, 8, 10, 12 };
@@ -59,9 +55,6 @@ public class PA33 {
 
 	}
 
-	/**
-	 * printResult Method: Do not change.
-	 */
 	public static void printResult(int[] arr, int target, int expected) {
 		System.out.println("Searching for " + target + " in " + Arrays.toString(arr));
 		int result = binarySearch(arr, target);
