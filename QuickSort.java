@@ -1,11 +1,12 @@
 import java.util.Random;
+import java.util.Arrays;
 
 public class QuickSort {
 	public static void sort(int low, int high, int [] arr) {
-		if (low<high+1) {
-			int p = partition(low, high, arr);
-			sort(low, p-1, arr);
-			sort(p+1, high, arr); 
+		if (low<high) {
+			int oldPivot = partition(low, high, arr);
+			sort(low, oldPivot-1, arr);
+			sort(oldPivot+1, high, arr); 
 		}
 	}
 	
@@ -28,21 +29,15 @@ public class QuickSort {
 	}
 	
 	private static int getPivot(int low, int high) {
-		Random r = new Random();
-		return r.nextInt((high-low)+1)+low;
+		Random random = new Random();
+		return random.nextInt((high-low)+1)+low;
 	}
 	
 	public static void main(String[] args) {
-		int[] arr = {5,8,8,9,6,7,5,6,2};
-		for (int i = 0; i<arr.length;i++) {
-			System.out.println(arr[i]);
-		}
+		int[] arr = {6,8,6,5,4,3,2,1,0};
+		System.out.println(Arrays.toString(arr));
 		System.out.println("------");
 		sort(0, arr.length-1, arr);
-		for (int i = 0; i<arr.length;i++) {
-			System.out.println(arr[i]);
-		}
-		int j = 9;
-		System.out.println(j++);
+		System.out.println(Arrays.toString(arr));
 	}
 }
