@@ -4,7 +4,7 @@ public class SelectionSort {
 			int least = arr[i];
 			for (int j = i; j < arr.length; j++) {
 				if (arr[j] < least) {
-					least = arr[j];
+					least = j;
 				}
 			}
 			int temp = arr[i];
